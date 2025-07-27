@@ -1,0 +1,23 @@
+{
+  "name": "github-profile-counter",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Matrix-style GitHub profile visit counter with weather for Toronto",
+  "main": "api/stats.js",
+  "keywords": [
+    "github",
+    "profile",
+    "counter",
+    "matrix",
+    "weather",
+    "badge"
+  ],
+  "author": "bh1090",
+  "license": "MIT",
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "@vercel/kv": "^3.0.0"
+  }
+}
