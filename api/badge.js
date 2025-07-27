@@ -1,8 +1,12 @@
 import { getStatsData } from './lib/stats-data.js';
 
 export default async function handler(req, res) {
+  // Set proper headers for SVG
   res.setHeader('Content-Type', 'image/svg+xml');
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   
   let debugInfo = {
     step: 'initializing',
