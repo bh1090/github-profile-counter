@@ -2,10 +2,7 @@
 
 A real-time Matrix-style terminal badge that displays GitHub profile visits and live Toronto weather data!
 
-<img src="https://github-profile-counter.vercel.app/api/badge" alt="Profile Views" />
-
-Alternative markdown format:
-![Profile Views](https://github-profile-counter.vercel.app/api/badge)
+![Profile Views](https://github-profile-counter.vercel.app/api/badge?v=2)
 
 ## ✨ Current Features
 

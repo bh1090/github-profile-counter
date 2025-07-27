@@ -1,12 +1,15 @@
 import { getStatsData } from './lib/stats-data.js';
 
 export default async function handler(req, res) {
-  // Set proper headers for SVG
+  // Set proper headers for SVG with strong anti-caching
   res.setHeader('Content-Type', 'image/svg+xml');
-  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('ETag', `"${Date.now()}"`); // Unique ETag for each request
   
   let debugInfo = {
     step: 'initializing',
@@ -25,6 +28,7 @@ export default async function handler(req, res) {
     console.log('📊 Stats data received:', data);
     
     debugInfo.step = 'generating SVG';
+    const timestamp = Date.now();
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="350" height="80">
   <defs>
     <style>
@@ -41,6 +45,9 @@ export default async function handler(req, res) {
       }
     </style>
   </defs>
+  
+  <!-- Hidden timestamp for cache busting -->
+  <metadata>timestamp:${timestamp}</metadata>
   
   <rect width="350" height="80" class="terminal-bg"/>
   <rect x="2" y="2" width="346" height="76" class="terminal-border"/>
