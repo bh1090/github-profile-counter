@@ -2,7 +2,7 @@
 
 A real-time Matrix-style terminal badge that displays GitHub profile visits and live Toronto weather data!
 
-![Profile Views](https://github-profile-counter-mgecvyubz-bhavya-trivedis-projects.vercel.app/api/badge)
+![Profile Views](https://github-profile-counter-cpncmsylo-bhavya-trivedis-projects.vercel.app/api/badge)
 
 ## ✨ Current Features
 
@@ -84,8 +84,9 @@ vercel --prod
 3. Add: `WEATHER_API_KEY` = `your_api_key_here`
 
 ### 5. Add to Your GitHub Profile
+Replace `your-deployment-url` with your actual Vercel deployment URL:
 ```markdown
-![Profile Views](https://your-vercel-deployment-url.vercel.app/api/badge)
+![Profile Views](https://your-deployment-url.vercel.app/api/badge)
 ```
 
 ## ⚙️ Customization
